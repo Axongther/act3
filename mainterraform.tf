@@ -106,7 +106,7 @@ resource "aws_instance" "linux_jump_server" {
   ami                    = "ami-0c02fb55956c7d316"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subred_publica_actividad_3.id
-  security_groups        = [aws_security_group.linux_jump_sg.name]
+  vpc_security_group_ids = [aws_security_group.linux_jump_sg.id]
   key_name               = "vockey"
 
   tags = {
@@ -120,7 +120,7 @@ resource "aws_instance" "linux_web_server" {
   ami                    = "ami-0c02fb55956c7d316"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subred_publica_actividad_3.id
-  security_groups        = [aws_security_group.linux_web_sg_1.name]
+  vpc_security_group_ids = [aws_security_group.linux_web_sg_1.id]
   key_name               = "vockey"
 
   tags = {
