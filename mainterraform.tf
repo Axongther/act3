@@ -116,7 +116,7 @@ resource "aws_instance" "linux_jump_server" {
 
 # --- Instancias Linux Web Server ---
 resource "aws_instance" "linux_web_server" {
-  count                  = 3
+  count                  = 4
   ami                    = "ami-0c02fb55956c7d316"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.subred_publica_actividad_3.id
