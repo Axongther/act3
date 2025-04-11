@@ -148,5 +148,4 @@ output "ips_linux_web_servers" {
 output "ip_linux_jump_server" {
   value = aws_instance.linux_jump_server.public_ip
   description = "Dirección IP pública del servidor Jump Server Linux"
-  
 }
