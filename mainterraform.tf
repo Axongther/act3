@@ -138,3 +138,14 @@ output "linux_jump_server" {
   value       = aws_instance.linux_jump_server.tags["Name"]
   description = "Nombre del servidor Jump Server Linux"
 }
+
+output "ips_linux_web_servers" {
+  value = [for s in aws_instance.linux_web_server : s.public_ip]
+    description = "Direcciones IP públicas de los servidores Linux Web"
+}
+
+output "ip_linux_jump_server" {
+  value = aws_instance.linux_jump_server.public_ip
+  description = "Dirección IP pública del servidor Jump Server Linux"
+  
+}
